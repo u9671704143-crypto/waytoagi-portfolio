@@ -25,6 +25,9 @@ def send_assets(path):
     return send_from_directory('assets', path)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000)) # Fallback to 5000
-    print(f"Starting Flask app on port {port}...")
+    import sys
+    # Force usage of PORT env or default to 8080
+    port = int(os.environ.get('PORT', 8080))
+    print(f"🚀 Starting Flask app directly on port {port}...", file=sys.stdout)
+    sys.stdout.flush() # Ensure log appears immediately
     app.run(host='0.0.0.0', port=port)
