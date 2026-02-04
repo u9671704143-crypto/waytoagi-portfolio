@@ -77,9 +77,36 @@
             /* Note: We need to be careful not to break other overlays, but Coze is likely the only one */
         }
 
-        /* Targeted override for Coze's specific mobile container class if known, otherwise using attribute selectors */
-        div[class*="coze-"] {
-            /* Reset max-width if it was set to 100% */
+        /* 
+           STRATEGY: PC Mode De-docking.
+           The Coze Sidebar usually takes 100% height and fixed right.
+           We force it to detach and float at the bottom right.
+        */
+        div[class*="coze-web-chat-sidebar"],
+        div[style*="height: 100%"][style*="position: fixed"][style*="right: 0"] {
+            position: fixed !important;
+            width: 400px !important;
+            height: 700px !important;
+            max-height: 80vh !important;
+            top: auto !important;
+            bottom: 100px !important;
+            /* Above toggle button */
+            right: 20px !important;
+            left: auto !important;
+
+            /* Visuals */
+            border-radius: 16px !important;
+            box-shadow: -5px 10px 30px rgba(0, 0, 0, 0.5) !important;
+            border: 1px solid #6c5ce7 !important;
+
+            /* Ensure it does not squeeze the body */
+            z-index: 10000 !important;
+        }
+
+        /* Prevent Sidebar from pushing body content */
+        body {
+            padding-right: 0 !important;
+            width: 100% !important;
         }
 
         /* 
@@ -484,25 +511,24 @@
             },
             componentProps: {
                 title: 'Townsend AI (数字分身)',
-                layout: 'mobile', // Keep mobile layout for the bubble
+                // layout: 'pc', // Default is PC (Sidebar), which we will CSS-hack into a floating window
                 lang: 'zh-CN',
             },
             ui: {
                 base: {
-                    zIndex: 2000,
+                    zIndex: 9999,
                 },
                 chatBot: {
                     title: "Townsend AI",
-                    width: 390, // 👈 Force width to 390px
-                    el: document.body, // mount to body
+                    width: 400, // Initial width
                 },
                 asstBtn: {
-                    isNeed: true, // Show the bubble
+                    isNeed: true,
                 }
             },
             auth: {
                 type: 'token',
-                token: '{{ coze_token }}', // 🛡️ Token
+                token: '{{ coze_token }}',
                 onRefreshToken: function () {
                     return '{{ coze_token }}'
                 }
