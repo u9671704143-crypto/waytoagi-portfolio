@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Townsend | AI Product Builder - WaytoAGI Graduation Showcase</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles_v3.css">
+    <link rel="stylesheet" href="css/styles_v4_upgrade.css">
+</head>
+
+<body class="theme-dark">
+    <!-- Background Noise/Grid -->
+    <div class="site-bg">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <nav class="container content-wrapper">
+            <div class="logo">Town<span class="highlight">.AI</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">首页</a></li>
+                <li><a href="#waytoagi">毕业作品</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container content-wrapper hero-layout">
+            <div class="hero-text fade-in-up">
+                <div class="badge-pill">
+                    <span class="status-dot"></span> WaytoAGI 第四期认证学员
+                </div>
+                <h1>代码小白的<br><span class="gradient-text">Vibe Coding</span> 之旅</h1>
+                <p class="subtitle">
+                    从传统空间设计师，到能够独立开发 AI 应用的产品经理。<br>
+                    这是我的数字化毕业展，见证我在 4 周内的蜕变。
+                </p>
+                <div class="hero-actions">
+                    <a href="#waytoagi" class="btn btn-primary">查看毕业作品 <i class="material-icons">arrow_downward</i></a>
+                    <a href="#" class="btn btn-secondary" onclick="toggleAIChat()">呼叫 AI 分身 <i
+                            class="material-icons">smart_toy</i></a>
+                </div>
+            </div>
+
+            <!-- Hero Visual (Abstract Code/Design) -->
+            <div class="hero-visual fade-in-up delay-1">
+                <div class="code-card glass-panel">
+                    <div class="window-controls">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code class="language-python">class Townsend(ProductManager):
+    def __init__(self):
+        self.background = "Landscape Architect"
+        self.new_skill = "Vibe Coding"
+    
+    def evolve(self):
+        return "AI Product Builder 🚀"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WaytoAGI Journey Section (Core) -->
+    <section id="waytoagi">
+        <div class="container content-wrapper">
+            <div class="section-header">
+                <h2><span class="line"></span>我的 Vibe Coding 之路</h2>
+                <p>7 次作业，7 个脚印，从畏惧代码到掌控 AI。</p>
+            </div>
+
+            <div class="assignments-grid">
+
+                <!-- EP07: DesignHoard (Star Project) -->
+                <article class="project-card highlight-card fade-in-up" onclick="openProjectModal('designhoard')">
+                    <div class="card-image">
+                        <img src="assets/designhoard_cover.png" class="card-cover" alt="DesignHoard Cover">
+                        <span class="project-badge">EP07 核心路演</span>
+                        <div class="hover-tip">点击查看完整路演 &rarr;</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Project DesignHoard</h3>
+                        <p class="description">一款解决了设计师“凌晨2:30崩溃”痛点的本地素材管理工具。基于 Python + PyWebView 开发，支持 8 线程并发下载与 Web
+                            解析。</p>
+                        <div class="tags">
+                            <span>Python</span><span>Flask</span><span>MVP</span>
+                        </div>
+                        <span class="link-text">查看项目路演与复盘 &rarr;</span>
+                    </div>
+                </article>
+
+                <!-- EP02: Personal Website -->
+                <article class="project-card fade-in-up delay-1"
+                    onclick="window.open('https://townsend.zeabur.app/', '_blank')" style="cursor: pointer;">
+                    <div class="card-content">
+                        <span class="project-number">EP02</span>
+                        <h3>从 Website 开始构建一款应用产品</h3>
+                        <p>第一次用 Cursor 写代码。从这行代码开始，我意识到“网页”不再是神秘的黑盒，而是我可以随意搭建的乐高积木。</p>
+                        <div class="tags"><span>HTML/CSS</span><span>Cursor</span></div>
+                    </div>
+                </article>
+
+                <!-- EP03: First AI App -->
+                <article class="project-card fade-in-up delay-1" onclick="openProjectModal('ep03')">
+                    <div class="card-content">
+                        <span class="project-number">EP03</span>
+                        <h3>与时俱进做出你的第一款AI应用</h3>
+                        <p>接入 DeepSeek API，实现了一个简单的对话机器。理解了 Token、Context 与 Prompt 的关系。</p>
+                        <div class="tags"><span>API Integration</span></div>
+                    </div>
+                </article>
+
+                <!-- EP05: Vibe Product -->
+                <article class="project-card fade-in-up delay-2" onclick="openProjectModal('ep05')">
+                    <div class="card-content">
+                        <span class="project-number">EP05</span>
+                        <h3>和Al一起vibe coding做产品</h3>
+                        <p>不仅是写代码，而是用产品思维去 Coding。在这个阶段，我学会了如何向 AI 下达精准的业务指令。</p>
+                    </div>
+                </article>
+
+                <!-- More small cards for other lessons -->
+                <div class="mini-grid">
+                    <div class="mini-card" onclick="openProjectModal('ep01')">
+                        <h4>EP01 大势不可逆，得势者必胜</h4>
+                        <p>拥抱 AI，改变思维</p>
+                    </div>
+                    <div class="mini-card" onclick="openProjectModal('ep04')">
+                        <h4>EP04 AI编程下一站，走入代码的世界</h4>
+                        <p>Python 基础语法</p>
+                    </div>
+                    <div class="mini-card" onclick="openProjectModal('ep06')">
+                        <h4>EP06 把产品交付到真实世界——上线与发布</h4>
+                        <p>Hello World to World</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section (Enhanced) -->
+    <section id="reflection">
+        <div class="container content-wrapper">
+            <div class="section-header">
+                <h2>AI 编程学习复盘</h2>
+                <p>给后来的伙伴：我的学习路径与心得</p>
+            </div>
+
+            <div class="reflection-grid">
+                <div class="quote-box glass-panel fade-in-up">
+                    <i class="material-icons quote-icon">format_quote</i>
+                    <blockquote>
+                        “不做代码重构的瘾君子，它不是玩具，而是陪我解决问题的战友。”
+                    </blockquote>
+                    <cite>—— 摘自 DesignHoard 开发复盘</cite>
+                </div>
+
+                <div class="learning-path glass-panel fade-in-up delay-1">
+                    <h3>🚀 我的 AI 学习路径</h3>
+                    <ul class="path-list">
+                        <li>
+                            <span class="step">01</span>
+                            <div class="step-content">
+                                <strong>破除恐惧</strong>
+                                <p>不要害怕报错。报错是 AI 的事，作为产品经理，不仅要会提需求，更要学会“验收”。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step">02</span>
+                            <div class="step-content">
+                                <strong>Vibe Coding 心法</strong>
+                                <p>把自己当成 PM，把 AI 当成高级工程师。用具体的业务逻辑去驱动代码，而不是扣语法细节。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step">03</span>
+                            <div class="step-content">
+                                <strong>死磕真实痛点</strong>
+                                <p>不要为了学技术而做 Demo。只有解决了自己真实的痛点（如 DesignHoard），你才有动力把产品打磨到极致。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Condensed) -->
+    <section id="about">
+        <div class="container content-wrapper">
+            <div class="section-header">
+                <h2>关于我</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>我是 Townsend，一名拥有 7 年经验的数字化产品经理。</p>
+                    <p>在参加 WaytoAGI 训练营之前，我更多是作为“需求提出方”。</p>
+                    <p>现在，我是一名 <strong>Full-Stack AI Builder</strong>。我不再等待技术排期，而是自己用 AI 验证想法。</p>
+                    <div class="skill-tags">
+                        <span>数字化转型</span>
+                        <span>WaytoAGI 社区学员</span>
+                        <span>AI Product Builder</span>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="num">7+</span>
+                        <span class="label">Years Exp</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="num">4</span>
+                        <span class="label">Weeks Coding</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="num">∞</span>
+                        <span class="label">Possibilities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Townsend. Built with <span class="heart">❤</span> & Vibe Coding.</p>
+        </div>
+    </footer>
+
+    <!-- Dynamic Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+
+            <div class="modal-header">
+                <h2 id="modal-title">Project Title</h2>
+                <p id="modal-subtitle" class="modal-subtitle">Subtitle</p>
+            </div>
+
+            <div id="modal-body-content" class="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        function toggleAIChat() {
+            alert("Part 2 AI Digital Human is coming soon...");
+        }
+
+        /* Content Dictionary - Aligned with Course Syllabus */
+        const projectData = {
+            'designhoard': {
+                title: "Project DesignHoard 路演",
+                subtitle: "EP07: 一个工具产品是怎么做出来的",
+                content: `
+                <div class="roadshow-section">
+                    <h3>1. 痛点场景</h3>
+                    <p>作为前景观设计师，我经历过无数个方案汇报前的夜晚。为了找图，我在 5 个网站开了 50 个标签页，机械地右键另存为 300 次。</p>
+                    <img src="assets/roadshow_pain_point.png" alt="Pain Point" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>2. 解决方案 (MVP)</h3>
+                    <p>死磕 MVP 三要素：<strong>获取、速度、安全</strong>。砍掉所有花哨功能。</p>
+                    <div class="feature-layout">
+                        <ul class="feature-list">
+                            <li><strong>极速获取</strong>：Web 解析引擎，一键抓取 ArchDaily。</li>
+                            <li><strong>8线程并发</strong>：Python ThreadPool 加持。</li>
+                            <li><strong>绿色免安装</strong>：数据本地私有。</li>
+                        </ul>
+                        <img src="assets/roadshow_architecture.png" alt="Architecture" class="roadshow-img">
+                    </div>
+                </div>
+                <div class="roadshow-section">
+                    <h3>3. 挖掘思路与复盘</h3>
+                    <p>Vibe Coding 的理念：<strong>“浪一来，全没了。先保证核心功能。”</strong></p>
+                    <img src="assets/roadshow_journey.png" alt="Journey" class="roadshow-img">
+                </div>`
+            },
+            'ep01': {
+                title: "EP01: 大势不可逆，得势者必胜",
+                subtitle: "初阶作业: 痛点挖掘机  |  进阶作业: MVP架构师",
+                content: `
+                <div class="roadshow-section">
+                    <h3>💡 痛点挖掘：从碎片知识到"救命30分钟"</h3>
+                    <p>在列举了“碎片知识搜集”、“事务记录提醒”等场景后，我最终选择了最痛的一个——<strong>学前儿童陪伴</strong>。</p>
+                    <p><strong>痛点场景：</strong>工作回来精力耗尽，无法高质量陪伴2岁宝宝。奶奶带娃、电视陪伴都有各自的弊端。</p>
+                    <img src="assets/ep01_intro.png" alt="AI Mindset Switch" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>🧠 核心思考</h3>
+                    <p>真正的 MVP 不是功能的堆砌，而是对“让父母放心、让孩子喜欢”这一初心的精准狙击。AI 不应是冷冰冰的技术，而是能解决家庭焦虑的温暖方案。</p>
+                    <p><strong>价值评分：</strong> ⭐⭐⭐⭐⭐</p>
+                </div>`
+            },
+            'ep03': {
+                title: "EP03: 与时俱进做出你的第一款AI应用",
+                subtitle: "API 调用 & 智能体开发初体验",
+                content: `
+                <div class="roadshow-section">
+                    <h3>🔮 实战项目：算一算今年运势</h3>
+                    <p>从代码小白不知如何配置 API Key，到使用 Gemini 解决报错，最终成功跑通了 <strong>“新年祝福贺卡”</strong> 和 <strong>“运势测算（大火！）”</strong> 两个应用。</p>
+                    <img src="assets/ep03_api.png" alt="API Bridge" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>✨ First Magic Moment</h3>
+                    <p>当简单的指令生成了文采斐然的祝词，我突然明白了 API 背后蕴含的巨大能量。我不再把它们看作枯燥的字符，而是视作一个个随时待命的<strong>“数字大脑”</strong>。</p>
+                </div>`
+            },
+            'ep04': {
+                title: "EP04: 代码入门",
+                subtitle: "AI 编程下一站，走入代码的世界",
+                content: `
+                <div class="roadshow-section">
+                    <h3>🔥 试错与重构：1400 Credits 的教训</h3>
+                    <p>起初想做网页插件实现“一键下载图片”，结果没跑通链路，还<strong>跑完了老师充值的 1400 credits</strong>！</p>
+                    <p>反思：模型也不能一次性做成摩天大楼。于是转换思路，从简单的 Python 爬虫脚本入手。</p>
+                    <img src="assets/ep04_code.png" alt="Code from Ashes" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>� V2 破局</h3>
+                    <p>成功安装环境，让 Gemini 打工，最终跑通了本地脚本，实现了 DesignHoard 的核心功能雏形。</p>
+                </div>`
+            },
+            'ep05': {
+                title: "EP05: Vibe Coding 实战",
+                subtitle: "和 AI 一起做产品",
+                content: `
+                <div class="roadshow-section">
+                    <h3>🎨 UI 版面升级：审美即生产力</h3>
+                    <p>一开始尝试了 stitch 进行 UI 改版，但最后决定回到 Antigravity。不写一行 CSS，而是“喂”给 AI 设计稿，要求按原版架构升级。</p>
+                    <img src="assets/ep05_vibe.png" alt="Vibe Coding Surfer" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>🌊 心得体会</h3>
+                    <p><strong>"Don't write code, write description."</strong> 像产品经理一样思考，像冲浪一样编程。</p>
+                </div>`
+            },
+            'ep06': {
+                title: "EP06: 交付上线",
+                subtitle: "把产品交付到真实世界",
+                content: `
+                <div class="roadshow-section">
+                    <h3>� Hello World to Family</h3>
+                    <p>因为<strong>“希望家里人也可以看到网址内容”</strong>，Gemini 推荐我在 <strong>Zeabur</strong> 上进行部署。</p>
+                    <img src="assets/ep06_deploy.png" alt="Hello Family Deployment" class="roadshow-img">
+                </div>
+                <div class="roadshow-section">
+                    <h3>� DevOps 初体验</h3>
+                    <p>经历了 Github 隐私泄漏的惊魂时刻，学会了配置环境变量，最终完成了从 Localhost 到公网的跨越：<a href="https://townsend.zeabur.app/" target="_blank" style="color: #00f0ff;">https://townsend.zeabur.app/</a></p>
+                </div>`
+            }
+        };
+
+        /* Modal Logic */
+        function openProjectModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            // Fill Data
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-subtitle').textContent = data.subtitle;
+            document.getElementById('modal-body-content').innerHTML = data.content;
+
+            // Show Modal
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target == modal) {
+                closeProjectModal();
+            }
+        }
+    </script>
+
+    <!-- Coze AI Digital Human SDK -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7602933986813968435',
+            },
+            componentProps: {
+                title: 'Townsend AI (数字分身)',
+            },
+            auth: {
+                type: 'token',
+                token: '{{ coze_token }}', // 🛡️ Token injected from Environment Variable via Flask
+                onRefreshToken: function () {
+                    return '{{ coze_token }}'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
