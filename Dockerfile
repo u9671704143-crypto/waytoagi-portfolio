@@ -18,5 +18,5 @@ ENV FLASK_APP=app.py
 # Expose the port Zeabur expects
 EXPOSE 8080
 
-# Run the application directly with Python
-CMD ["python", "app.py"]
+# Run the application with Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
